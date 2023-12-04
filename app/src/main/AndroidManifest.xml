@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
     <application
         android:allowBackup="true"
@@ -11,7 +14,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Mobileapk"
+        android:usesCleartextTraffic="true"
+
         tools:targetApi="31">
+        <activity android:name=".activity.BaruActivity"
+            android:exported="false"></activity>
+        <activity
+            android:name=".activity.Main2Activity"
+            android:exported="false"
+            android:label="@string/title_activity_main2" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -21,6 +32,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".activity.LoginActivity"
+            android:exported="false"></activity>
+        <activity android:name="com.example.mobileapk.activity.MasukActivity" />
+        <activity android:name="com.example.mobileapk.activity.RegisterActivity" />
+
     </application>
 
 </manifest>

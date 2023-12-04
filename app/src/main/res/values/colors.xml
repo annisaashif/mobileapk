@@ -2,4 +2,12 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="orange">#DD901E</color>
+
+    <color name="biru">#152A9C</color>
+
+    <color name="biru_muda">#384EC5</color>
+
+    <color name="putih">#EEEEEE</color>
 </resources>
