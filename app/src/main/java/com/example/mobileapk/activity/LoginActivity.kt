@@ -56,18 +56,16 @@ class LoginActivity : AppCompatActivity() {
         pb.visibility = View.VISIBLE
 
         // Melakukan request login
-        ApiConfig.instanceRetrofit.login(edt_email.text.toString(), edt_password.text.toString())
-            .enqueue(object : Callback<ResponModel> {
+        ApiConfig.instanceRetrofit.login(edt_email.text.toString(), edt_password.text.toString()).enqueue(object : Callback<ResponModel> {
                 override fun onResponse(call: Call<ResponModel>, response: Response<ResponModel>) {
                     pb.visibility = View.GONE // Sembunyikan ProgressBar setelah mendapatkan respons
                     val respon = response.body()!!
                     if (respon.success == 1) {
                         s.setStatusLogin(true)
-
-                      // s.setString(s.nama, respon.user.name)
-                     //   s.setString(s.phone, respon.user.phone)
-                      s.setString(s.email, respon.user.email)
-
+                        s.setUser(respon.user)
+                        //s.setString(s.nama, respon.user.name)
+                        //s.setString(s.phone, respon.user.phone)
+                        //s.setString(s.email, respon.user.email)
 
                         val intent = Intent(this@LoginActivity, MainActivity::class.java)
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)

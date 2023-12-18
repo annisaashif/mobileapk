@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+
 }
 
 android {
@@ -84,6 +85,9 @@ dependencies {
     implementation ("com.google.code.gson:gson:2.8.6")
     implementation ("com.squareup.okhttp3:okhttp:4.11.0")
 
+    //display image
+    implementation ("com.squareup.picasso:picasso:2.71828")
+    }
 
 
 
@@ -93,4 +97,5 @@ dependencies {
 
 
 
-}
+
+

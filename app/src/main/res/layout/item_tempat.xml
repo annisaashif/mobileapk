@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView
+    android:id="@+id/layout"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="150dp"
     android:layout_height="wrap_content"
@@ -16,7 +17,7 @@
             android:id="@+id/img_tempat"
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:src="@drawable/g4" />
+            android:src="@drawable/img_2" />
 
         <TextView
             android:id="@+id/tv_nama"
@@ -31,7 +32,7 @@
             android:text="Lapangan Wirabraja  Sprts Center"/>
 
         <TextView
-            android:id="@+id/tv_alamat"
+            android:id="@+id/tv_judul"
             android:textColor="@color/orange"
             android:lines="2"
             android:maxLines="2"

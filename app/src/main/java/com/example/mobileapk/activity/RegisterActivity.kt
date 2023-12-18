@@ -24,7 +24,7 @@ class RegisterActivity : AppCompatActivity() {
     lateinit var s: SharedPref
     lateinit var edt_nama: EditText // Deklarasi EditText
     lateinit var edt_email: EditText // Deklarasi EditText
-    lateinit var edt_phone: EditText // Deklarasi EditText
+    //lateinit var edt_phone: EditText // Deklarasi EditText
     lateinit var edt_password: EditText // Deklarasi EditText
     lateinit var pb: ProgressBar
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,7 +35,6 @@ class RegisterActivity : AppCompatActivity() {
         s = SharedPref(this)
         edt_nama = findViewById(R.id.edt_nama)
         edt_email = findViewById(R.id.edt_email)
-        edt_phone = findViewById(R.id.edt_phone)
         edt_password = findViewById(R.id.edt_password)
         pb = findViewById(R.id.pb)
 
@@ -47,7 +46,6 @@ class RegisterActivity : AppCompatActivity() {
     private fun register() {
         val nama = edt_nama.text.toString().trim()
         val email = edt_email.text.toString().trim()
-        val phone = edt_phone.text.toString().trim()
         val password = edt_password.text.toString().trim()
 
         // Validasi kolom input
@@ -59,11 +57,7 @@ class RegisterActivity : AppCompatActivity() {
             edt_email.error = "Kolom Email tidak boleh kosong"
             edt_email.requestFocus()
             return
-        } else if (phone.isEmpty()) {
-            edt_phone.error = "Kolom Nomor Telepon tidak boleh kosong"
-            edt_phone.requestFocus()
-            return
-        } else if (password.isEmpty()) {
+        }  else if (password.isEmpty()) {
             edt_password.error = "Kolom Password tidak boleh kosong"
             edt_password.requestFocus()
             return
@@ -73,7 +67,7 @@ class RegisterActivity : AppCompatActivity() {
         pb.visibility = View.VISIBLE
 
         // Lakukan permintaan register ke server atau API
-        ApiConfig.instanceRetrofit.register(nama, email, password, phone).enqueue(object : Callback<ResponModel> {
+        ApiConfig.instanceRetrofit.register(nama, email, password).enqueue(object : Callback<ResponModel> {
             override fun onResponse(call: Call<ResponModel>, response: Response<ResponModel>) {
                 // Sembunyikan ProgressBar saat respons diterima
                 pb.visibility = View.GONE

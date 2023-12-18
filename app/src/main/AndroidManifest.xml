@@ -37,6 +37,7 @@
             android:exported="false"></activity>
         <activity android:name="com.example.mobileapk.activity.MasukActivity" />
         <activity android:name="com.example.mobileapk.activity.RegisterActivity" />
+        <activity android:name="com.example.mobileapk.activity.DetailTempatActivity" />
 
     </application>
 
